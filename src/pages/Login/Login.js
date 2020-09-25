@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Footer from './components/Footer'
 import './Login.scss'
 import { Button, Input, Form } from 'antd'
+import system from '../../api/system'
 class Login extends Component {
   state = {
     btnLoading: false
@@ -11,13 +12,15 @@ class Login extends Component {
     this.setState({
       btnLoading: true
     })
-    setTimeout(() => {
+    const data = value
+    system.login(data).then(res => {
+      sessionStorage.setItem('sid', res.token)
+      this.props.history.push('/company/list')
+    }).finally(() => {
       this.setState({
         btnLoading: false
       })
-      this.props.history.push('/company/list')
-    }, 1000)
-    console.log(value)
+    })
   }
 
   render() {

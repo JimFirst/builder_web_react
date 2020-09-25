@@ -1,0 +1,9 @@
+.z-layout {
+  display: flex;
+  .ant-menu {
+    width: 256px;
+  }
+  .app-main {
+    flex: 1;
+  }
+}

@@ -6,13 +6,16 @@ import { BrowserRouter } from 'react-router-dom'
 import zhCN from 'antd/es/locale/zh_CN';
 import { ConfigProvider } from 'antd'
 import * as serviceWorker from './serviceWorker';
-
+// import store from './store'
+// import { Provider } from 'react-redux';
 ReactDOM.render(
+  // <Provider store={store}>
   <BrowserRouter>
     <ConfigProvider locale={zhCN}>
-      <App />
+        <App />
     </ConfigProvider>
-  </BrowserRouter>,
+    </BrowserRouter>,
+  // </Provider>
   document.getElementById('root')
 );
 

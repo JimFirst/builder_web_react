@@ -1,33 +1,44 @@
 const asyncRoutes =  [
   {
     path: '/company',
-    title: '公司管理',
+    title: '实名制管理',
     subs: [
       {
         path: '/company/list',
-        title: '公司列表',
+        title: '项目管理',
         component: () => import('../pages/company/CompanyList.js')
       },
       {
         path: '/company/administrators',
-        title: '公司管理员',
+        title: '企业管理',
         component: () => import('../pages/company/Administrators.js')
       },
       {
         path: '/company/keyManage',
-        title: '开放接口管理',
+        title: '人员管理',
         component: () => import('../pages/company/CompanyList.js')
       }
     ]
   },
   {
     path: '/project',
-    title: '工程管理',
-    subs: []
+    title: '视频监控',
+    subs: [
+      {
+        path: '/project/list',
+        title: '工程列表',
+        component: () => import('../pages/company/CompanyList.js')
+      },
+      {
+        path: '/project/administrators',
+        title: '总分包合同',
+        component: () => import('../pages/company/Administrators.js')
+      },
+    ]
   },
   {
     path: '/user',
-    title: '用户管理',
+    title: '环境监测',
     subs: []
   }
 ]
